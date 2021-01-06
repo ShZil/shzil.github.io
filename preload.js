@@ -20,7 +20,20 @@ function renderSwitcher() {
 const switcherClicked = () => {
   const canvas = document.getElementById('switcher');
   const {clientX: x, clientY: y} = window.event;
-  let isin = distanceSquared(x, y, canvas.offsetLeft + 75, canvas.offsetTop + 75) < 150*150;
+  let isin = distanceSquared(x, y, canvas.offsetLeft, canvas.offsetTop + 75) < 150*150;
+  let relative = {
+    x: x - canvas.offsetLeft,
+    y: y - canvas.offsetTop
+  };
+  if (relative.y < 75) {
+    switcher.top();
+  } else {
+    if (relative.x < 75) {
+      switcher.left();
+    } else {
+      switcher.right();
+    }
+  }
 };
 
 function distanceSquared(x0, y0, x1, y1) {
