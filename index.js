@@ -147,7 +147,6 @@ function allBdays() {
 
 function schedule() {
   embold(getHourHTML(getToday(), findCurrentHour()));
-  alert(findCurrentHour());
 }
 
 // int hour = [0/1...10]
