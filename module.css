@@ -1,0 +1,548 @@
+.TTTable
+{
+	table-layout: fixed;
+	border: solid 1px #777777;
+	border-collapse: collapse;
+	clear: both;
+}
+.TTCell
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	background-color: var(--darkGrey);
+	overflow: hidden;
+	border: solid 1px #777777;
+}
+.TTLesson
+{
+	font-size: 20px;
+	padding: 2px;
+	color: var(--bright);
+	text-align: right;
+	white-space: normal;
+}
+.CTitle
+{
+	font-family: Arial, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--white);
+	border: solid 1px #777777;
+}
+.CName
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	color: #333333;
+	text-align: center;
+	border: solid 1px #777777;
+}
+.NextButton, .PrevButton
+{
+	padding: 5px 17px 5px 17px;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color: #B7E6F6;
+	border-radius: 3px;
+}
+
+.NextButton A, .PrevButton A, .NextButton A:hover, .PrevButton A:hover
+{
+	font-family: Arial, Tahoma;
+	font-weight:bold;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+.HeaderLabel
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #527752;
+}
+.ChangesTable
+{
+}
+.ChangesDate
+{
+	font-family: Tahoma;
+	font-size: 13px;
+	color: #777777;
+}
+.ChangesInfo
+{
+	font-family: Tahoma;
+	font-size: 13px;
+	color: #527752;
+}
+.HeaderTitle
+{
+	font-family: Arial, Tahoma;
+	font-size: 19px;
+	font-weight: bold;
+	color: #777777;
+}
+A.HeaderTitle, A.HeaderTitle:link, A.HeaderTitle:visited, A.HeaderTitle:active
+{
+	font-family: Arial, Tahoma;
+	font-size: 15px;
+	font-weight: bold;
+	color: #777777;
+}
+
+A.HeaderTitle:hover
+{
+	font-family: Arial, Tahoma;
+	font-size: 15px;
+	font-weight: bold;
+	color: #7777FF;
+}
+
+.HeaderClasses
+{
+	font-family: Arial, Tahoma;
+	font-size: 15px;
+	font-weight: bold;
+	color: #7777FF;
+}
+.MsgCell
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 14px;
+	background-color: #ffffff;
+	color: #333333;
+}
+.MsgText
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 14px;
+	background-color: #ffffff;
+}
+.HeaderTable
+{
+	table-layout: fixed;
+	border-style: none;
+}
+.HeaderSep
+{
+	border-bottom: solid 1px green;
+	width: 7px;
+}
+.HeaderClassesCell
+{
+	font-family: Arial, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #777777;
+	border-bottom: solid 1px green;
+}
+.HeaderCell
+{
+	text-align: center;
+	border: solid 1px green;
+	background-image: url(headerback.gif);
+	background-repeat: repeat-x;
+	padding: 10px 0px 10px 0px;
+	text-shadow: 0px 1px #ffffff;
+}
+.HeaderCellSelected
+{
+	text-align: center;
+	background-color: White;
+	border-top: solid 1px green;
+	border-left: solid 1px green;
+	border-right: solid 1px green;
+	background-image: url(headerbacksel.gif);
+	background-repeat: repeat-x;
+	padding: 10px 0px 10px 0px;
+	text-shadow: 0px 1px #ffffff;
+}
+.HeaderCellButton
+{
+	border-bottom: 1px solid green;
+	text-align: center;
+	width: 100px;
+	text-shadow: 0px 1px #ffffff;
+}
+.PlaceHolder
+{
+	direction: rtl;
+	border-left: solid 1px green;
+	border-right: solid 1px green;
+	border-bottom: solid 1px green;
+	background-color: White;
+	padding: 17px;
+}
+.EmptyList
+{
+	direction: rtl;
+	text-align: center;
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 17px;
+	font-weight: bold;
+	color: #337733;
+	background-color: #ffffff;
+}
+.UpdateDate
+{
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 9px;
+	font-weight: bold;
+	color: #777777;
+	text-align: right;
+	float: right;
+	padding-top: 10px;
+}
+.ShahafLogo
+{
+	float:left;
+	padding-top:3px;
+}
+.DisplayTable
+{
+	width: 98%;
+	border-collapse: collapse;
+}
+.DisplayCell
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+}
+.DisplayFreeChange
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+	background-color: Red;
+	border-bottom: solid 1px darkgreen;
+}
+.DisplayFillChange
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #000000;
+	background-color: Lime;
+	border-bottom: solid 1px darkgreen;
+}
+.DisplayExamChange
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #000000;
+	background-color: Yellow;
+	border-bottom: solid 1px darkgreen;
+}
+.DisplayEventChange
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+	background-color: Silver;
+	border-bottom: solid 1px darkgreen;
+}
+.DisplayHeader
+{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 34px;
+	color: Yellow;
+	text-align: center;
+}
+.MessageText
+{
+	font-family: Arial;
+	font-size: 34px;
+	color: Yellow;
+	text-align: right;
+}
+.MessageTable
+{
+	width: 97%;
+}
+.MessageHeader
+{
+	font-family: Arial;
+	font-size: 34px;
+	color: Yellow;
+	border-bottom: solid 3px Yellow;
+}
+.TableFreeChange
+{
+	font-family: Arial, Tahoma;
+	font-weight: bold;
+	font-size: 12px;
+	color: #ffffff;
+	background-color: Red;
+	text-align: right;
+}
+.TableFillChange
+{
+	font-family: Arial, Tahoma;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000;
+	background-color: Lime;
+	text-align: right;
+}
+.TableExamChange
+{
+	font-family: Arial, Tahoma;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000;
+	background-color: Yellow;
+	text-align: right;
+}
+.TableEventChange
+{
+	font-family: Arial, Tahoma;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000;
+	background-color: Silver;
+	text-align: right;
+}
+.ScreenSetupSection
+{
+	width: 600px;
+	padding: 15px 35px 15px 35px;
+	border: solid 1px #777777;
+	background-color: #f7f7f7;
+	margin: 10px;
+	float: right;
+}
+.NormalTextBox
+{
+	text-align:right;
+	width:200px;
+}
+
+.shf-cal-header
+{
+	width:100%;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight:bold;
+}
+
+.shf-cal-header td
+{
+	text-align:center;
+}
+
+.shf-cal-header-month
+{
+	font-size: 18px;
+}
+
+.shf-cal-table
+{
+	width:100%;
+	table-layout:fixed;
+	border-collapse:collapse;
+	padding:0px;
+}
+
+.shf-cal-table td
+{
+	border: 1px solid #afafaf;
+}
+
+.shf-cal-day
+{
+}
+
+.shf-cal-day-header
+{
+	font-family: Arial;
+	font-size: 13px;
+	color:#555555;
+	font-weight:bold;
+	text-align:center;
+	background-color: #fafafa;
+	padding: 3px;
+}
+
+.shf-cal-day-title
+{
+	font-family: Arial;
+	font-size: 16px;
+	color:#555555;
+	padding: 3px 3px 1px 3px;
+}
+
+.shf-cal-day-content
+{
+	height:190px;
+	overflow: hidden;
+}
+
+.nextprev-month
+{
+	color: #c7c7c7;
+}
+
+.shf-cal-entry
+{
+	font-family: Arial;
+	font-size: 12px;
+	font-weight:normal;
+	padding:2px 4px 2px 1px;
+	margin: 1px 2px 1px 2px;
+	cursor: default;
+	border-radius: 3px;
+}
+
+.cal-event
+{
+	color:#ffffff;
+	background-color: #0073b7;
+}
+
+.cal-exam
+{
+	color:#ffffff;
+	background-color: #00a65a;
+}
+
+.day-title-m
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #555555;
+	border: 1px solid #e0e0e0;
+	width:100%;
+	text-align:center;
+	padding: 5px 0px 5px 0px;
+	border-radius: 2px;
+}
+
+.day-title-week, .day-title-week a
+{
+	background-color: #B7E6F6;
+	font-weight: bold;
+}
+
+.day-table-area
+{
+	width:100%;
+	clear: both;
+	display:none;
+	padding-top: 7px;
+}
+
+.tab-class-title-m
+{
+	font-family: Arial, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #527752;
+}
+
+.tab-button-m
+{
+	width: 100%;
+	float: right;
+	border: 1px solid #e0e0e0;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	border-radius: 2px;
+}
+
+.timetable-day-table-view-m
+{
+	width:100%;
+	border-collapse:collapse;
+}
+
+.timetable-day-table-view-m th
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	background-color:#e0e0e0;
+	padding:3px;
+}
+
+.timetable-day-table-view-m td
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	border: 1px solid #e0e0e0;
+	padding:3px;
+}
+
+.changes-list-title-m
+{
+	font-family: Arial, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #777777;
+	text-align:center;
+	padding:3px;
+	margin: 5px 0px 0px 0px;
+	background-color: #efefef;
+	border: 1px solid #e0e0e0;
+	border-radius: 2px;
+}
+
+.changes-list-item-m
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	color: #333333;
+	text-align:right;
+	padding-bottom:7px;
+}
+
+.empty-list-m
+{
+	font-family: Arial, Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #999999;
+	text-align: center;
+}
+
+.hour-m
+{
+}
+
+.hour-time
+{
+	color: #656565;
+	font-size: 0.9em;
+	font-weight: normal;
+}
+
+.teach-type
+{
+	color: #CB0000;
+	font-weight: bold;
+}
+
+.teach-type-a
+{
+	color: #C98700;
+	font-weight: bold;
+}
+
+.teach-note
+{
+	color: #808080;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.CName > b {
+	color: var(--bright);
+}
