@@ -1,0 +1,11 @@
+.switcher
+{
+  z-index: 2;
+  background: black;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
