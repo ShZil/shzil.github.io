@@ -1,25 +1,52 @@
 function renderSwitcher() {
   const canvas = document.getElementById('switcher');
   const ctx = canvas.getContext('2d');
+
+  // Clear BG
   ctx.fillStyle = 'black';
   ctx.fillRect(0, 0, 300, 150);
 
   ctx.strokeStyle = 'white';
-
+  // Horizontal
   ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.moveTo(0, 75);
   ctx.lineTo(300, 75);
   ctx.stroke();
 
+  // Vertical
   ctx.lineWidth = 20;
   ctx.beginPath();
   ctx.moveTo(150, 75);
   ctx.lineTo(150, 150);
   ctx.stroke();
 
-  // ctx.drawImage(document.getElementById("A"), 10, 10, 80, 80);
-  console.log(document.getElementById("A"));
+  let topGradient = ctx.createLinearGradient(110, 0, 200, 0);
+  topGradient.addColorStop("0", "black");
+  topGradient.addColorStop("1.0", "white");
+  ctx.strokeStyle = topGradient;
+
+  // A
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.moveTo(55*2, 60);
+  ctx.lineTo(75*2, 10);
+  ctx.lineTo(95*2, 60);
+  ctx.moveTo(63*2, 38);
+  ctx.lineTo(87*2, 38);
+  ctx.stroke();
+
+  let rightGradient = ctx.createLinearGradient(0, 0, 150, 0);
+  rightGradient.addColorStop("0", "darkgreen");
+  rightGradient.addColorStop("1.0", "lime");
+  ctx.strokeStyle = rightGradient;
+
+  // 0
+  ctx.beginPath();
+  ctx.ellipse(75, 110, 25, 23, 0, 0, 2 * Math.PI);
+  ctx.moveTo(29*2, 127);
+  ctx.lineTo(45*2, 89);
+  ctx.stroke();
 }
 
 const switcherClicked = () => {
@@ -30,7 +57,9 @@ const switcherClicked = () => {
     x: x - canvas.offsetLeft - 75,
     y: y - canvas.offsetTop - 75
   }), 150);
-  console.log(relative);
+  if (settings.switcher.logClicks) {
+    console.log(`${x - canvas.offsetLeft}, ${y - canvas.offsetTop}`);
+  }
   if (relative.y < 0) {
     switcher.top();
   } else {
@@ -43,14 +72,30 @@ const switcherClicked = () => {
   const ctx = canvas.getContext('2d');
   renderSwitcher();
   ctx.lineWidth = 5;
-  ctx.strokeStyle = 'lime';
+  ctx.strokeStyle = settings.switcher.mouseTracker.color;
   ctx.beginPath();
   ctx.moveTo(150, 75);
   ctx.lineTo(2*(relative.x+75), relative.y+75);
   ctx.stroke();
 };
 
-const switcher = {top: () => {}, right: () => {}, left: () => {}};
+const switcher = {
+  top: () => {
+    if (settings.switcher.logChoice) {
+      console.log("Top");
+    }
+  },
+  right: () => {
+    if (settings.switcher.logChoice) {
+      console.log("Right");
+    }
+  },
+  left: () => {
+    if (settings.switcher.logChoice) {
+      console.log("Left");
+    }
+  }
+};
 
 function distanceSquared(x0, y0, x1, y1) {
   return (x0-x1)*(x0-x1) + (y0-y1)*(y0-y1);
