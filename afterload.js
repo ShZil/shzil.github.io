@@ -3,7 +3,7 @@ const settings = {
     logClicks: true,
     logChoice: true,
     mouseTracker: {
-      color: "lime"
+      color: "red"
     }
   }
 }

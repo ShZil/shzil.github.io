@@ -2,6 +2,14 @@ function renderSwitcher() {
   const canvas = document.getElementById('switcher');
   const ctx = canvas.getContext('2d');
 
+  drawBase(ctx);
+
+  drawTop(ctx);
+
+  drawLeft(ctx);
+}
+
+function drawBase(ctx) {
   // Clear BG
   ctx.fillStyle = 'black';
   ctx.fillRect(0, 0, 300, 150);
@@ -20,7 +28,9 @@ function renderSwitcher() {
   ctx.moveTo(150, 75);
   ctx.lineTo(150, 150);
   ctx.stroke();
+}
 
+function drawTop(ctx) {
   let topGradient = ctx.createLinearGradient(110, 0, 200, 0);
   topGradient.addColorStop("0", "black");
   topGradient.addColorStop("1.0", "white");
@@ -35,11 +45,13 @@ function renderSwitcher() {
   ctx.moveTo(63*2, 38);
   ctx.lineTo(87*2, 38);
   ctx.stroke();
+}
 
-  let rightGradient = ctx.createLinearGradient(0, 0, 150, 0);
-  rightGradient.addColorStop("0", "darkgreen");
-  rightGradient.addColorStop("1.0", "lime");
-  ctx.strokeStyle = rightGradient;
+function drawLeft(ctx) {
+  let leftGradient = ctx.createLinearGradient(0, 0, 150, 0);
+  leftGradient.addColorStop("0", "darkgreen");
+  leftGradient.addColorStop("1.0", "lime");
+  ctx.strokeStyle = leftGradient;
 
   // 0
   ctx.beginPath();
