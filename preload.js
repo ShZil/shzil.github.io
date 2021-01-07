@@ -7,6 +7,8 @@ function renderSwitcher() {
   drawTop(ctx);
 
   drawLeft(ctx);
+
+  drawRight(ctx);
 }
 
 function drawBase(ctx) {
@@ -59,6 +61,48 @@ function drawLeft(ctx) {
   ctx.moveTo(29*2, 127);
   ctx.lineTo(45*2, 89);
   ctx.stroke();
+}
+
+function drawRight(ctx) {
+  let points = [
+    {x: 10, y: 0},
+    {x: 10, y: 10},
+    {x: 10, y: 20},
+    {x: 2, y: 5},
+    {x: 2, y: 15},
+    {x: 18, y: 5},
+    {x: 18, y: 15}
+  ];
+
+  // Grass Block
+  drawCubeFace(ctx, 75, 82, 3, points, 0, 5, 1, 3, "green");
+  drawCubeFace(ctx, 75, 82, 3, points, 3, 1, 2, 4, "SaddleBrown");
+  drawCubeFace(ctx, 75, 82, 3, points, 6, 5, 1, 2, "SaddleBrown");
+}
+
+function drawCubeFace(ctx, x, y, scl, points, i, j, k, w, color) {
+  ctx.fillStyle = color;
+
+  let arr = transformCubeFace(points, x, y, scl);
+
+  ctx.beginPath();
+  ctx.moveTo(arr[i].x*2, arr[i].y);
+  ctx.lineTo(arr[j].x*2, arr[j].y);
+  ctx.lineTo(arr[k].x*2, arr[k].y);
+  ctx.lineTo(arr[w].x*2, arr[w].y);
+  ctx.closePath();
+  ctx.fill();
+}
+
+function transformCubeFace(arr, xoff, yoff, scl) {
+  let narr = [];
+  for (let i = 0; i < arr.length; i++) {
+    narr[i] = {
+      x: arr[i].x * scl + xoff,
+      y: arr[i].y * scl + yoff
+    };
+  }
+  return narr;
 }
 
 const switcherClicked = () => {
