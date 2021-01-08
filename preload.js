@@ -50,7 +50,7 @@ function drawTop(ctx) {
 }
 
 function drawLeft(ctx) {
-  let leftGradient = ctx.createLinearGradient(0, 0, 150, 0);
+  let leftGradient = ctx.createLinearGradient(0, 0, 150, 75);
   leftGradient.addColorStop("0", "darkgreen");
   leftGradient.addColorStop("1.0", "lime");
   ctx.strokeStyle = leftGradient;
@@ -75,9 +75,9 @@ function drawRight(ctx) {
   ];
 
   // Grass Block
-  drawCubeFace(ctx, 75, 82, 3, points, 0, 5, 1, 3, "green");
-  drawCubeFace(ctx, 75, 82, 3, points, 3, 1, 2, 4, "SaddleBrown");
-  drawCubeFace(ctx, 75, 82, 3, points, 6, 5, 1, 2, "SaddleBrown");
+  drawCubeFace(ctx, 75, 82, 3, points, 0, 5, 1, 3, "rgb(89, 151, 50)");
+  drawCubeFace(ctx, 75, 82, 3, points, 3, 1, 2, 4, "rgb(177, 125, 86)");
+  drawCubeFace(ctx, 75, 82, 3, points, 6, 5, 1, 2, "rgb(55, 38, 26)");
 }
 
 function drawCubeFace(ctx, x, y, scl, points, i, j, k, w, color) {

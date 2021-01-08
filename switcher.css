@@ -3,6 +3,7 @@
   z-index: 2;
   background: black;
   border-radius: 50%;
+  border: black 1px solid;
   width: 150px;
   height: 150px;
   position: fixed;
