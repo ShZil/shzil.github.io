@@ -1,0 +1,19 @@
+.sidebar
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 75px;
+  display: inline-grid;
+  grid-template-columns: auto;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar-button
+{
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
