@@ -4,11 +4,12 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 75px;
+  width: 65px;
   display: inline-grid;
   grid-template-columns: auto;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 15px;
+  background-color: black;
 }
 
 .sidebar-button
@@ -16,4 +17,11 @@
   width: 75px;
   height: 75px;
   cursor: pointer;
+  font-size: 40px;
+  padding: 10px;
+  color: white;
+}
+
+.sidebar-button:hover {
+  color: lightGray;
 }
