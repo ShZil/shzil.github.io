@@ -106,6 +106,7 @@ function transformCubeFace(arr, xoff, yoff, scl) {
 }
 
 const switcherClicked = () => {
+  settings.update.interactedWith = true;
   const canvas = document.getElementById('switcher');
   const {clientX: x, clientY: y} = window.event;
   let isin = distanceSquared(x, y, canvas.offsetLeft, canvas.offsetTop + 75) < 150*150;
@@ -114,7 +115,7 @@ const switcherClicked = () => {
     y: y - canvas.offsetTop - 75
   }), 150);
   if (settings.switcher.logClicks) {
-    console.log(`${x - canvas.offsetLeft}, ${y - canvas.offsetTop}`);
+    console.log(`Switcher Clicked: ${x - canvas.offsetLeft}, ${y - canvas.offsetTop}`);
   }
   if (relative.y < 0) {
     switcher.top();
@@ -139,16 +140,19 @@ const switcher = {
   top: () => {
     if (settings.switcher.logChoice) {
       console.log("Top");
+      settings.update.picked = "Top";
     }
   },
   right: () => {
     if (settings.switcher.logChoice) {
       console.log("Right");
+      settings.update.picked = "Right";
     }
   },
   left: () => {
     if (settings.switcher.logChoice) {
       console.log("Left");
+      settings.update.picked = "Left";
     }
   }
 };
@@ -168,4 +172,41 @@ function mult(vector, factor) {
   return {
     x: vector.x * factor, y: vector.y * factor
   };
+}
+
+var ticks = 0;
+function update() {
+  if (ticks % settings.update.continuity == 0) {
+    let angle;
+    if (settings.update.interactedWith) {
+      return;
+    } else {
+      angle = ((ticks / 200) * settings.update.speed) % 360;
+    }
+    let {x, y} = {
+      x: Math.cos(angle) * 150,
+      y: Math.sin(angle) * 150
+    };
+    const canvas = document.getElementById('switcher');
+    const ctx = canvas.getContext('2d');
+    renderSwitcher();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = settings.switcher.mouseTracker.color;
+    ctx.beginPath();
+    ctx.moveTo(150, 75);
+    ctx.lineTo(2*(x+75), y+75);
+    ctx.stroke();
+    if (ticks % (settings.update.continuity * 20) == 0) {
+      if (y < 0) {
+        switcher.top();
+      } else {
+        if (x < 0) {
+          switcher.left();
+        } else {
+          switcher.right();
+        }
+      }
+    }
+  }
+  ticks++;
 }
