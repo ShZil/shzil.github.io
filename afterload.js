@@ -14,7 +14,7 @@ const settings = {
     picked: undefined
   },
   header: {
-    starRadius: 0.5,
+    starRadius: 0.8,
     starCount: 100
   }
 }

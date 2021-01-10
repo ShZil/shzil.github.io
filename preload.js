@@ -197,7 +197,7 @@ var headerObjects = [
 function init() {
   const canvas = document.getElementById('header-bg');
   canvas.width  = 1000;
-  canvas.height = 350;
+  canvas.height = 300;
   const top = headerObjects[0];
   const right = headerObjects[1];
   const left = headerObjects[2];
