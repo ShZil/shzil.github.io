@@ -2,7 +2,7 @@
 {
   background-color: black;
   width: 100%;
-  height: 350px;
+  height: 300px;
   z-index: 1;
 }
 
@@ -10,4 +10,61 @@
 {
   width: 100%;
   height: 100%;
+}
+
+.header-text
+{
+  font-size: 25px;
+  position: relative;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 67%);
+  top: -120px;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.big
+{
+  font-size: 70px;
+  position: relative;
+  top: 10px;
+  -webkit-text-fill-color: white;
+}
+
+.shzilogo-header
+{
+  font-size: 80px;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  color: white;
+  position: absolute;
+  top: 30px;
+  left: 120px;
+  letter-spacing: -9px;
+}
+
+.lime
+{
+  color: #05d900;
+}
+
+.cyan
+{
+  color: #21a0fc;
+}
+
+.red
+{
+  color: #d11a14;
+}
+
+.orange
+{
+  color: #ffa800;
+}
+
+.yellow
+{
+  color: #f1d30c;
 }
