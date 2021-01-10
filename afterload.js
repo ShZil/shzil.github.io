@@ -12,6 +12,10 @@ const settings = {
     header: 5,
     interactedWith: false,
     picked: undefined
+  },
+  header: {
+    starRadius: 1,
+    starCount: 50
   }
 }
 
