@@ -174,15 +174,17 @@ function mult(vector, factor) {
   };
 }
 
-function drawStar(ctx, x, y, o, a) {
+function drawStar(ctx, x, y, z, o, a) {
   ctx.strokeStyle = `rgb(${o}, ${o}, ${o})`;
   ctx.lineWidth = settings.header.starRadius*2.1;
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.rotate(a * 2 * Math.PI);
-  ctx.translate(-x, -y);
-  ctx.strokeRect(x-settings.header.starRadius, y-settings.header.starRadius, settings.header.starRadius * 2, settings.header.starRadius * 2);
-  ctx.restore();
+  {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(a * 2 * Math.PI);
+    ctx.translate(-x, -y);
+    ctx.strokeRect(x-settings.header.starRadius, y-settings.header.starRadius, settings.header.starRadius * 2 * z, settings.header.starRadius * 2 * z);
+    ctx.restore();
+  }
 }
 
 var ticks = 0;
@@ -193,6 +195,9 @@ var headerObjects = [
 ];
 
 function init() {
+  const canvas = document.getElementById('header-bg');
+  canvas.width  = 1000;
+  canvas.height = 350;
   const top = headerObjects[0];
   const right = headerObjects[1];
   const left = headerObjects[2];

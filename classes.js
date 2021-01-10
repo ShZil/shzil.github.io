@@ -8,7 +8,7 @@ class Star {
   }
 
   render(ctx, w, h) {
-    drawStar(ctx, this.x*w, this.y*h, this.o, this.a);
+    drawStar(ctx, this.x*w, this.y*h, this.z, this.o, this.a);
   }
 
   update() {
