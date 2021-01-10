@@ -9,6 +9,7 @@ const settings = {
   update: {
     speed: 0.3,
     continuity: 5,
+    header: 5,
     interactedWith: false,
     picked: undefined
   }
@@ -17,4 +18,5 @@ const settings = {
 renderSwitcher();
 document.querySelector("#switcher").onclick = switcherClicked;
 
+init();
 const updater = window.setInterval(update, 10);

@@ -175,6 +175,18 @@ function mult(vector, factor) {
 }
 
 var ticks = 0;
+var headerObjects = [
+  [], // Top
+  [], // Right
+  []  // Left
+];
+
+function init() {
+  const top = headerObjects[0];
+  const right = headerObjects[1];
+  const left = headerObjects[2];
+}
+
 function update() {
   if (ticks % settings.update.continuity == 0) {
     let angle;
@@ -207,6 +219,9 @@ function update() {
         }
       }
     }
+  }
+  if (ticks % settings.update.header == 0) {
+
   }
   ticks++;
 }

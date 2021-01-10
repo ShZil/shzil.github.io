@@ -10,6 +10,7 @@
   overflow-x: hidden;
   padding-top: 15px;
   background-color: black;
+  z-index: 2;
 }
 
 .sidebar-button

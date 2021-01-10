@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="main.css" type="text/css">
 <link rel="stylesheet" href="switcher.css" type="text/css">
 <link rel="stylesheet" href="sidebar.css" type="text/css">
+<link rel="stylesheet" href="header.css" type="text/css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -21,18 +22,21 @@
 <!-- GitHub Repository: https://github.com/ShZil/shzil.github.io -->
 
 <body>
+  <script src="classes.js" charset="utf-8" type="text/javascript"></script>
   <script src="preload.js" charset="utf-8" type="text/javascript"></script>
 
-  <canvas class="switcher" id="switcher">
-
-  </canvas>
+  <canvas class="switcher" id="switcher"></canvas>
 
   <div class="sidebar">
-    <span class="sidebar-button menu"><i class="fa fa-bars"></i></span>
-    <span class="sidebar-button home"><i class="fa fa-home"></i></span>
-    <span class="sidebar-button videos"><i class="fa fa-play"></i></span>
-    <span class="sidebar-button plans"><i class="fa fa-paper-plane"></i></span>
-    <span class="sidebar-button contact"><i class="fa fa-envelope"></i></span>
+    <span class="sidebar-button menu" id="menu"><i class="fa fa-bars"></i></span>
+    <span class="sidebar-button home" id="home"><i class="fa fa-home"></i></span>
+    <span class="sidebar-button videos" id="videos"><i class="fa fa-play"></i></span>
+    <span class="sidebar-button plans" id="plans"><i class="fa fa-paper-plane"></i></span>
+    <span class="sidebar-button contact" id="contact"><i class="fa fa-envelope"></i></span>
+  </div>
+
+  <div class="header">
+    <canvas id="header-bg"></canvas>
   </div>
 
   <script src="afterload.js" charset="utf-8" type="text/javascript"></script>
