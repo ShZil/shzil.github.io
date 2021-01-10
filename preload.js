@@ -140,19 +140,19 @@ const switcher = {
   top: () => {
     if (settings.switcher.logChoice) {
       console.log("Top");
-      settings.update.picked = "Top";
+      change(0);
     }
   },
   right: () => {
     if (settings.switcher.logChoice) {
       console.log("Right");
-      settings.update.picked = "Right";
+      change(1);
     }
   },
   left: () => {
     if (settings.switcher.logChoice) {
       console.log("Left");
-      settings.update.picked = "Left";
+      change(2);
     }
   }
 };
@@ -172,6 +172,10 @@ function mult(vector, factor) {
   return {
     x: vector.x * factor, y: vector.y * factor
   };
+}
+
+function stateString(num) {
+  return (["Top", "Right", "Left"])[num];
 }
 
 function drawStar(ctx, x, y, z, o, a) {
@@ -202,12 +206,14 @@ function init() {
   const right = headerObjects[1];
   const left = headerObjects[2];
 
+  top.push(new UniverseBG());
   for (let i = 0; i < settings.header.starCount; i++) {
     top.push(new Star());
   }
 }
 
 function update() {
+  ticks++;
   if (ticks % settings.update.continuity == 0) {
     let angle;
     if (settings.update.interactedWith) {
@@ -240,14 +246,21 @@ function update() {
       }
     }
   }
-  if (ticks % settings.update.header == 0) {
+  if (ticks % settings.update.header == 0) { 
     const canvas = document.getElementById('header-bg');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < headerObjects[0].length; i++) {
-      headerObjects[0][i].update();
-      headerObjects[0][i].render(ctx, canvas.width, canvas.height);
+    for (let i = 0; i < headerObjects[stage].length; i++) {
+      headerObjects[stage][i].update();
+      headerObjects[stage][i].render(ctx, canvas.width, canvas.height);
     }
   }
-  ticks++;
+}
+
+var stage = 1;
+function change(state) {
+  if (state != stage) {
+    console.log("From "+stateString(stage)+" To "+stateString(state));
+    stage = state;
+  }
 }
