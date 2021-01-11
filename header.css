@@ -68,3 +68,27 @@
 {
   color: #f1d30c;
 }
+
+.stroke {
+  text-shadow:
+   -1px -1px 0 #000,
+    0   -1px 0 #000,
+    1px -1px 0 #000,
+    1px  0   0 #000,
+    1px  1px 0 #000,
+    0    1px 0 #000,
+   -1px  1px 0 #000,
+   -1px  0   0 #000;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-text {
+    background: black;
+    font-size: 0px;
+  }
+
+  .big {
+    position: absolute;
+    right: 15px;
+  }
+}
