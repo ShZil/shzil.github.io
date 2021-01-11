@@ -9,7 +9,7 @@ const settings = {
   update: {
     speed: 0.3,
     continuity: 5,
-    header: 5,
+    header: 6,
     interactedWith: false,
     picked: undefined
   },
