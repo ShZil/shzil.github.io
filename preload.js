@@ -174,8 +174,25 @@ function mult(vector, factor) {
   };
 }
 
+function warp(val, range) {
+  console.log(val + ", " + range);
+  if (val < 0) return warp(val + range, range);
+  if (val > range) return val % range;
+  return val;
+}
+
 function stateString(num) {
   return (["Top", "Right", "Left"])[num];
+}
+
+function specialWarp(v) {
+  if (v == 3) return 0;
+  if (v == -1) return 2;
+  return v;
+}
+
+function literalStateString(num) {
+  return (["Atheism", "Minecraft", "Programming"])[specialWarp(num)];
 }
 
 function drawStar(ctx, x, y, z, o, a) {
@@ -262,6 +279,8 @@ function change(state) {
   if (state != stage) {
     console.log("From "+stateString(stage)+" To "+stateString(state));
     stage = state;
+    const subtitle = document.querySelector(".header-text");
+    subtitle.innerHTML = `${literalStateString(stage - 1)} | <b class="big stroke">${literalStateString(stage)}</b> | ${literalStateString(stage + 1)}`;
   }
 }
 
