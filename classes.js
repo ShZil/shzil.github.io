@@ -31,7 +31,7 @@ class UniverseBG {
     this.h = 100;
     this.res = 3;
     this.darken = 15;
-    this.dim = [5, 5, 0];
+    this.dim = [5, 1.4285, 0];
   }
 
   update() {
