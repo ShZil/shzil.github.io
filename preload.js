@@ -265,6 +265,7 @@ function change(state) {
   }
 }
 
+// Perlin: http://asserttrue.blogspot.com/2011/12/perlin-noise-in-javascript_31.html
 PerlinNoise = new function() {
 
 this.noise = function(x, y, z) {
