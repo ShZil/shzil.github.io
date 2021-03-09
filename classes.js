@@ -26,12 +26,13 @@ class Star {
 }
 
 class UniverseBG {
-  constructor() {
-    this.w = 350;
-    this.h = 100;
-    this.res = 3;
-    this.darken = 15;
-    this.dim = [5, 1.4285, 0];
+  constructor(mode, darkness) {
+    this.w = 350; // Width
+    this.h = 100; // Height
+    this.res = 3; // Resize the UniverseBG to fit the canvas.
+    this.darken = 255 * darkness / 100; // 255 - true color, 0 - black
+    this.dim = [5, 1.4285, 0]; // The perlin Z component with relation to color
+    this.mode = mode; // Color Mode, i.e. [1, 1, 1] for true color and [0, 1, 0] for lime.
   }
 
   update() {
@@ -46,7 +47,9 @@ class UniverseBG {
       for (let j = 0; j < this.h; j++) {
         this.pixels[i][j] = [];
         for (let rgb = 0; rgb < 3; rgb++) {
-          this.pixels[i][j][rgb] = PerlinNoise.noise(sizei*i, sizej*j, rgb*this.dim[2]) * this.darken;
+          this.pixels[i][j][rgb] = PerlinNoise.noise(sizei*i, sizej*j, rgb*this.dim[rgb])
+          * this.darken
+          * this.mode[rgb];
         }
       }
     }
@@ -61,4 +64,27 @@ class UniverseBG {
       }
     }
   }
+}
+
+class BinaryColumn {
+    constructor(x) {
+      this.x = x;
+      this.y = -30 * Math.random();
+      this.v = Math.random() * 50;
+      this.column = [];
+      var height = 15 + 20 * Math.random();
+      for (let i = 0; i < height; i++) {
+          this.column[i] = Math.random() > 0.5 ? '0' : '1';
+      }
+    }
+
+    render(ctx, w, h) {
+      for (let i = 0; i < this.column.length; i++) {
+          drawChar(ctx, this.column[i], this.x, this.y + settings.header.binaryWidth * i, 20, 'rgba(0, 160, 0, ' + (Math.random() * 20) + ')', 2);
+      }
+    }
+
+    update() {
+
+    }
 }

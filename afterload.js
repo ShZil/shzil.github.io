@@ -15,12 +15,15 @@ const settings = {
   },
   header: {
     starRadius: 0.8,
-    starCount: 100
+    starCount: 100,
+    binaryColumnCount: 26,
+    binaryWidth: 40
   }
 }
 
-renderSwitcher();
 document.querySelector("#switcher").onclick = switcherClicked;
 
 init();
 const updater = window.setInterval(update, 10);
+
+change(1);

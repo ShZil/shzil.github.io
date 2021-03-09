@@ -1,7 +1,4 @@
-function renderSwitcher() {
-  const canvas = document.getElementById('switcher');
-  const ctx = canvas.getContext('2d');
-
+function renderSwitcher(ctx) {
   drawBase(ctx);
 
   drawTop(ctx);
@@ -109,6 +106,7 @@ const switcherClicked = () => {
   settings.update.interactedWith = true;
   const canvas = document.getElementById('switcher');
   const {clientX: x, clientY: y} = window.event;
+
   let isin = distanceSquared(x, y, canvas.offsetLeft, canvas.offsetTop + 75) < 150*150;
   let relative = mult(normallize({
     x: x - canvas.offsetLeft - 75,
@@ -127,13 +125,8 @@ const switcherClicked = () => {
     }
   }
   const ctx = canvas.getContext('2d');
-  renderSwitcher();
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = settings.switcher.mouseTracker.color;
-  ctx.beginPath();
-  ctx.moveTo(150, 75);
-  ctx.lineTo(2*(relative.x+75), relative.y+75);
-  ctx.stroke();
+  renderSwitcher(ctx);
+  drawLine(ctx, 150, 75, 2*(relative.x+75), relative.y+75, settings.switcher.mouseTracker.color, 5);
 };
 
 const switcher = {
@@ -208,6 +201,12 @@ function drawStar(ctx, x, y, z, o, a) {
   }
 }
 
+function drawChar(ctx, char, x, y, size, color, shake) {
+    ctx.font = size + "px Consolas";
+    ctx.fillStyle = color;
+    ctx.fillText(char, x + shake * Math.random(), y + shake * Math.random());
+}
+
 var ticks = 0;
 var headerObjects = [
   [], // Top
@@ -223,34 +222,46 @@ function init() {
   const right = headerObjects[1];
   const left = headerObjects[2];
 
-  top.push(new UniverseBG());
+  top.push(new UniverseBG([1, 1, 1], 11));
   for (let i = 0; i < settings.header.starCount; i++) {
     top.push(new Star());
   }
+
+  left.push(new UniverseBG([0.1, 1, 0.1], 20));
+  for (let i = 0; i < settings.header.binaryColumnCount; i++) {
+    left.push(new BinaryColumn(i * settings.header.binaryWidth));
+  }
+}
+
+function drawLine(ctx, x0, y0, x1, y1, color, width) {
+    ctx.lineWidth = width;
+    ctx.strokeStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1, y1);
+    ctx.stroke();
 }
 
 function update() {
   ticks++;
   if (ticks % settings.update.continuity == 0) {
+
     let angle;
     if (settings.update.interactedWith) {
       return;
     } else {
       angle = ((ticks / 200) * settings.update.speed) % 360;
     }
+
     let {x, y} = {
       x: Math.cos(angle) * 150,
       y: Math.sin(angle) * 150
     };
-    const canvas = document.getElementById('switcher');
-    const ctx = canvas.getContext('2d');
-    renderSwitcher();
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = settings.switcher.mouseTracker.color;
-    ctx.beginPath();
-    ctx.moveTo(150, 75);
-    ctx.lineTo(2*(x+75), y+75);
-    ctx.stroke();
+
+    const ctx = document.getElementById('switcher').getContext('2d');
+    renderSwitcher(ctx);
+    drawLine(ctx, 150, 75, 2*(x+75), y+75, settings.switcher.mouseTracker.color, 5);
+
     if (ticks % (settings.update.continuity * 20) == 0) {
       if (y < 0) {
         switcher.top();
@@ -263,6 +274,7 @@ function update() {
       }
     }
   }
+
   if (ticks % settings.update.header == 0) {
     const canvas = document.getElementById('header-bg');
     const ctx = canvas.getContext('2d');
@@ -272,9 +284,10 @@ function update() {
       headerObjects[stage][i].render(ctx, canvas.width, canvas.height);
     }
   }
+
 }
 
-var stage = 1;
+var stage = 0;
 function change(state) {
   if (state != stage) {
     console.log("From "+stateString(stage)+" To "+stateString(state));
