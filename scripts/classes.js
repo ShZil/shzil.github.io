@@ -39,8 +39,8 @@ class UniverseBG {
   update() {
     this.pixels = [];
 
-    const sizei = 1/this.w * this.dim[0];
-    const sizej = 1/this.h * this.dim[1];
+    const sizei = 1/this.w;
+    const sizej = 1/this.h;
     this.dim[0] += this.v;
     this.dim[1] += this.v;
     this.dim[2] += this.v;
