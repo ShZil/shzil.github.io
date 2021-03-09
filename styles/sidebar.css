@@ -1,28 +1,28 @@
 .sidebar
 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 65px;
-  display: inline-grid;
-  grid-template-columns: auto;
-  overflow-x: hidden;
-  padding-top: 15px;
-  background-color: black;
-  z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 65px;
+    display: inline-grid;
+    grid-template-columns: auto;
+    overflow-x: hidden;
+    padding-top: 15px;
+    background-color: black;
+    z-index: 2;
 }
 
 .sidebar-button
 {
-  width: 75px;
-  height: 75px;
-  cursor: pointer;
-  font-size: 40px;
-  padding: 10px;
-  color: white;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 10px;
+    color: white;
 }
 
 .sidebar-button:hover {
-  color: lightGray;
+    color: lightGray;
 }
