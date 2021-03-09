@@ -2,12 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
 
-  <meta charset="utf-8">
-  <title>ShZil's Website</title>
+    <meta charset="utf-8">
+    <title>ShZil's Website</title>
 
 </head>
 
 <link rel="stylesheet" href="styles/switcher.css" type="text/css">
+<link rel="stylesheet" href="styles/segments.css" type="text/css">
 <link rel="stylesheet" href="styles/sidebar.css" type="text/css">
 <link rel="stylesheet" href="styles/header.css" type="text/css">
 <link rel="stylesheet" href="styles/main.css" type="text/css">
@@ -25,51 +26,80 @@
 <!-- GitHub Repository: https://github.com/ShZil/shzil.github.io -->
 
 <body>
-  <script src="scripts/classes.js" charset="utf-8" type="text/javascript"></script>
-  <script src="scripts/preload.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/classes.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/preload.js" charset="utf-8" type="text/javascript"></script>
 
-  <canvas class="switcher" id="switcher"></canvas>
+    <canvas class="switcher" id="switcher"></canvas>
 
-  <div class="sidebar">
-    <span class="sidebar-button menu" id="menu"><i class="fa fa-bars"></i></span>
-    <!-- Extends the sidebar and reveals the buttons' names -->
-    <span class="sidebar-button home" id="home"><i class="fa fa-home"></i></span>
-    <!-- Return to main -->
-    <span class="sidebar-button videos" id="videos"><i class="fa fa-play"></i></span>
-    <!-- Videos page - 2 columns, depends on current switcher position -->
-    <span class="sidebar-button plans" id="plans"><i class="fa fa-paper-plane"></i></span>
-    <!-- idk -->
-    <!-- Not plans for future videos becuase people make steal -->
-    <span class="sidebar-button contact" id="contact"><i class="fa fa-envelope"></i></span>
-    <!-- Send an Email -->
-  </div>
-
-  <div class="header">
-    <canvas id="header-bg"></canvas>
-    <div class="header-text"></div>
-    <div class="shzilogo-header stroke">
-      <b class="lime">S</b>
-      <b class="cyan">h</b>
-      <b class="red">Z</b>
-      <b class="orange">i</b>
-      <b class="yellow">l</b>
+    <div class="sidebar">
+        <span class="sidebar-button menu" id="menu"><i class="fa fa-bars"></i></span>
+        <!-- Extends the sidebar and reveals the buttons' names -->
+        <span class="sidebar-button home" id="home"><i class="fa fa-home"></i></span>
+        <!-- Return to main -->
+        <span class="sidebar-button videos" id="videos"><i class="fa fa-play"></i></span>
+        <!-- Videos page - 2 columns, depends on current switcher position -->
+        <span class="sidebar-button plans" id="plans"><i class="fa fa-paper-plane"></i></span>
+        <!-- idk -->
+        <!-- Not plans for future videos becuase people make steal -->
+        <span class="sidebar-button contact" id="contact"><i class="fa fa-envelope"></i></span>
+        <!-- Send an Email -->
     </div>
-  </div>
 
-  <div class="body">
-      <div class="description">
-          <div class="identity">
-              <img src="icon.png" alt="Logo" class="logo">
-              <div class="name text bold">
-                  ShZil
-              </div>
-          </div>
-          <div class="sentences text">
-              Hey guys, I'm ShZil!
-          </div>
-      </div>
-  </div>
+    <div class="header">
+        <canvas id="header-bg"></canvas>
+        <div class="header-text"></div>
+        <div class="shzilogo-header stroke">
+            <b class="lime">S</b>
+            <b class="cyan">h</b>
+            <b class="red">Z</b>
+            <b class="orange">i</b>
+            <b class="yellow">l</b>
+        </div>
+    </div>
 
-  <script src="scripts/afterload.js" charset="utf-8" type="text/javascript"></script>
+    <div class="body">
+        <div class="segment segment-bright">
+            <div class="message">
+                <div class="identity">
+                    <img src="icon.png" alt="Logo" class="logo">
+                    <div class="name text bold">
+                        ShZil
+                    </div>
+                </div>
+                <div class="sentences sentences-sub text twice">
+                    Hey guys, I'm ShZil! I make videos about Philosophy, Minecraft, and Computer Science.<br>
+                    Welcome to my website, enjoy yourself!
+                </div>
+            </div>
+        </div>
+        <div class="segment segment-dark">
+            <div class="message message-right">
+                <div class="identity black-on-white">
+                    <img src="images/yt.png" alt="YT Logo" class="logo">
+                    <div class="name text bold">
+                        YouTube
+                    </div>
+                </div>
+                <div class="sentences sentences-add text twice">
+                    Here is a link to my <a href="https://www.youtube.com/channel/UCqldfULto9JNa4lXbpM6Oxg" class="red">YouTube channel</a>.
+                </div>
+            </div>
+        </div>
+        <div class="segment segment-bright">
+            <div class="message">
+                <div class="identity">
+                    <img src="images/git.png" alt="Git Logo" class="logo">
+                    <div class="name text bold">
+                        GitHub
+                    </div>
+                </div>
+                <div class="sentences sentences-sub text twice">
+                    Here is a link to my <a href="https://www.youtube.com/channel/UCqldfULto9JNa4lXbpM6Oxg" class="purple">GitHub profile</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/afterload.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>

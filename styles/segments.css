@@ -1,0 +1,12 @@
+.segment {
+    height: 240px;
+    width: 100%;
+}
+
+.segment-bright {
+    background-color: lightGray;
+}
+
+.segment-dark {
+    background-color: darkGray;
+}
