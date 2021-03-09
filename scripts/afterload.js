@@ -16,8 +16,8 @@ const settings = {
   header: {
     starRadius: 0.8,
     starCount: 100,
-    binaryColumnCount: 26,
-    binaryWidth: 40
+    binaryColumnCount: 38,
+    binaryWidth: 50
   }
 }
 

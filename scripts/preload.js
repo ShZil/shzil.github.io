@@ -216,18 +216,19 @@ var headerObjects = [
 
 function init() {
   const canvas = document.getElementById('header-bg');
-  canvas.width  = 1000;
-  canvas.height = 300;
+  canvas.width  = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  const ratio = canvas.height / canvas.width;
   const top = headerObjects[0];
   const right = headerObjects[1];
   const left = headerObjects[2];
 
-  top.push(new UniverseBG([1, 1, 1], 11));
+  top.push(new UniverseBG([1, 1, 1], 11, ratio));
   for (let i = 0; i < settings.header.starCount; i++) {
     top.push(new Star());
   }
 
-  left.push(new UniverseBG([0.1, 1, 0.1], 20));
+  left.push(new UniverseBG([0.1, 1, 0.1], 20, ratio));
   for (let i = 0; i < settings.header.binaryColumnCount; i++) {
     left.push(new BinaryColumn(i * settings.header.binaryWidth));
   }

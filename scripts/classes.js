@@ -26,10 +26,10 @@ class Star {
 }
 
 class UniverseBG {
-  constructor(mode, darkness) {
-    this.w = 350; // Width
-    this.h = 100; // Height
-    this.res = 3; // Resize the UniverseBG to fit the canvas.
+  constructor(mode, darkness, ratio) {
+    this.res = 7; // Resize the UniverseBG to fit the canvas.
+    this.w = 270; // Width
+    this.h = this.w * ratio; // Height
     this.darken = 255 * darkness / 100; // 255 - true color, 0 - black
     this.dim = [5, 1.4285, 0]; // The perlin Z component with relation to color
     this.mode = mode; // Color Mode, i.e. [1, 1, 1] for true color and [0, 1, 0] for lime.
@@ -69,8 +69,7 @@ class UniverseBG {
 class BinaryColumn {
     constructor(x) {
       this.x = x;
-      this.y = -30 * Math.random();
-      this.v = Math.random() * 50;
+      this.y = -50 * Math.random();
       this.column = [];
       var height = 15 + 20 * Math.random();
       for (let i = 0; i < height; i++) {
@@ -80,7 +79,7 @@ class BinaryColumn {
 
     render(ctx, w, h) {
       for (let i = 0; i < this.column.length; i++) {
-          drawChar(ctx, this.column[i], this.x, this.y + settings.header.binaryWidth * i, 20, 'rgba(0, 160, 0, ' + (Math.random() * 20) + ')', 2);
+          drawChar(ctx, this.column[i], this.x, this.y + settings.header.binaryWidth * i, 35, 'rgba(0, 160, 0, ' + (Math.random() * 70) + ')', 0.5);
       }
     }
 
