@@ -44,43 +44,6 @@
   letter-spacing: -9px;
 }
 
-.lime
-{
-  color: #05d900;
-}
-
-.cyan
-{
-  color: #21a0fc;
-}
-
-.red
-{
-  color: #d11a14;
-}
-
-.orange
-{
-  color: #ffa800;
-}
-
-.yellow
-{
-  color: #f1d30c;
-}
-
-.stroke {
-  text-shadow:
-  -1px -1px 0 #000,
-  0   -1px 0 #000,
-  1px -1px 0 #000,
-  1px  0   0 #000,
-  1px  1px 0 #000,
-  0    1px 0 #000,
-  -1px  1px 0 #000,
-  -1px  0   0 #000;
-}
-
 @media only screen and (max-width: 600px) {
   .header-text {
     background: black;
