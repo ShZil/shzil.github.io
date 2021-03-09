@@ -74,6 +74,10 @@
     margin: 5px;
 }
 
+div.identity-right {
+    float: right;
+}
+
 .text {
     font-family: 'Nunito', 'Arial', sans-serif;
 }

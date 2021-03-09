@@ -30,7 +30,8 @@ function drawBase(ctx) {
 }
 
 function drawTop(ctx) {
-  let topGradient = ctx.createLinearGradient(110, 0, 200, 0);
+    // Old, Gradient-based A
+  /*let topGradient = ctx.createLinearGradient(110, 0, 200, 0);
   topGradient.addColorStop("0", "black");
   topGradient.addColorStop("1.0", "white");
   ctx.strokeStyle = topGradient;
@@ -43,7 +44,10 @@ function drawTop(ctx) {
   ctx.lineTo(95*2, 60);
   ctx.moveTo(63*2, 38);
   ctx.lineTo(87*2, 38);
-  ctx.stroke();
+  ctx.stroke();*/
+  // New, image-based A
+  const image = document.getElementById('A.png');
+  ctx.drawImage(image, 75, -3, 75*2, 75);
 }
 
 function drawLeft(ctx) {
@@ -51,6 +55,7 @@ function drawLeft(ctx) {
   leftGradient.addColorStop("0", "darkgreen");
   leftGradient.addColorStop("1.0", "lime");
   ctx.strokeStyle = leftGradient;
+  ctx.lineWidth = 6;
 
   // 0
   ctx.beginPath();
@@ -296,6 +301,15 @@ function change(state) {
     const subtitle = document.querySelector(".header-text");
     subtitle.innerHTML = `${literalStateString(stage - 1)} | <b class="big stroke">${literalStateString(stage)}</b> | ${literalStateString(stage + 1)}`;
   }
+}
+
+var imagesLoaded = 0;
+var allImagesLoaded = false;
+function loadedImage() {
+    imagesLoaded++;
+    if (imagesLoaded >= document.getElementsByClassName('images')[0].children.length) {
+        allImagesLoaded = true;
+    }
 }
 
 // Perlin: http://asserttrue.blogspot.com/2011/12/perlin-noise-in-javascript_31.html
