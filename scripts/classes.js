@@ -32,6 +32,7 @@ class UniverseBG {
     this.h = this.w * ratio; // Height
     this.darken = 255 * darkness / 100; // 255 - true color, 0 - black
     this.dim = [5, 1.4285, 0]; // The perlin Z component with relation to color
+    this.v = 0.05; // The speed at which this.dim[0, 1, 2] change.
     this.mode = mode; // Color Mode, i.e. [1, 1, 1] for true color and [0, 1, 0] for lime.
   }
 
@@ -40,7 +41,9 @@ class UniverseBG {
 
     const sizei = 1/this.w * this.dim[0];
     const sizej = 1/this.h * this.dim[1];
-    this.dim[2] += 0.02;
+    this.dim[0] += this.v;
+    this.dim[1] += this.v;
+    this.dim[2] += this.v;
 
     for (let i = 0; i < this.w; i++) {
       this.pixels[i] = [];
